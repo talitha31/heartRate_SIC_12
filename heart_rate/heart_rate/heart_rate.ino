@@ -27,6 +27,10 @@ void setup() {
   }
 
   Serial.println("Connected to WiFi");
+
+  Serial.println("");
+  Serial.print("Connected to WiFi network with IP Address: ");
+  Serial.println(WiFi.localIP());
 }
 
 void loop() {
@@ -43,7 +47,7 @@ void loop() {
         http.addHeader("Content-Type", "application/x-www-form-urlencoded");
         
         
-        data_request = "data=";    
+        data_request = "heartRate=";    
         data_request += String(sensorValue);       
 
         int respon = http.POST(data_request);

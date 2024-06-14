@@ -6,8 +6,6 @@ app = Flask(__name__)
 Data = []
 @app.route('/get_data', methods=['GET'])
 def get_data():
-    # data = request.args.get('data')
-    # Lakukan pemrosesan data sesuai kebutuhan
     print(f'Data received via GET: ')
     return Data
 
@@ -15,7 +13,6 @@ def get_data():
 @app.route('/post_data', methods=['POST'])
 def post_data():
     data = request.form.get('data')
-    # Lakukan pemrosesan data sesuai kebutuhan
     print(f'Data received via POST: {data}')
     Data.append(data)
     return ('Data post')
@@ -23,4 +20,8 @@ def post_data():
 # Rute untuk menerima data melalui metode PUT
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5000, debug=True)
+
+# RUN : 
+# 1. env\Scripts\activate
+# 2. python app.py
