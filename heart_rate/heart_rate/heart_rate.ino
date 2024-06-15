@@ -58,7 +58,7 @@ void loop() {
         http.end();
      
     }else{
-        Serial.println("Wifi ga nyambung");
+        Serial.println("Error in WiFi connection");
 
     }
 
